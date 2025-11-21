@@ -45,3 +45,9 @@ body {
     z-index: -1;
     pointer-events: none;
 }
+@keyframes fogMove {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-50%, 0, 0); }
+}
+.game-container{
+}
