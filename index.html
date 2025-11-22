@@ -3,18 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Echoes of th Pines</title>
+    <title>Echoes of the Pines</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="background-layer"></div>
-    <div class="fog-layer"></div>
+<audio autoplay loop id="bg-audio">
+    <source src="thingsUsed/mixkit-forest-birds-chirp-ambiance-69.wav" type="audio/wav">
+</audio>
 
-    <main class="game-container">
-        <h1>Echoes of the Pines</h1>
-        <p style="font-style: italic; opacity: 0.8"></p>
-        <br>
-        <a href="scenes/the-clearing.html" class="btn">Enter the Valley</a>
-    </main>
+<div class="background-layer"></div>
+<div class="fog-layer"></div>
+
+<main class="game-container">
+    <h1>Echoes of the Pines</h1>
+    <p style="opacity: 0.9; font-family: 'CMU Classical Serif', serif; font-size: 13pt;">
+        the forest remembers what you have forgotten.
+    </p>
+    <br>
+    <a href="scenes/the-clearing.html" class="btn btn-pulse" >Enter the Valley</a>
+</main>
+
 </body>
 </html>
