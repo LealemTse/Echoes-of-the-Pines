@@ -17,7 +17,7 @@ body {
     color: var(--text-color);
     font-family: var(--font-main), serif;
     height: 100vh;
-    overflow: hidden; /* Keeps everything full screen */
+    overflow: auto;
     display: flex;
     justify-content: center;
     align-items: center;
