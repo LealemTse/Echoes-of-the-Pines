@@ -2,9 +2,78 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Command Unit</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        /* Specific vibe for the Van: Warmer, cramped, safe */
+        .background-layer {
+            /* Placeholder gradient until you find a "Van Interior" image */
+            background: linear-gradient(to bottom, #1a1a1a, #2c1e1e);
+        }
+
+        /* The Van is safe, so let's make the container feel like a dashboard */
+        .game-container {
+            border-top: 4px solid #555; /* Grey (Neutral/Safe) */
+            background: rgba(10, 10, 10, 0.95);
+        }
+
+        /* A specific style for "System Messages" on your laptop */
+        .laptop-screen {
+            font-family: 'Courier New', monospace;
+            background: #000;
+            border: 1px solid #333;
+            color: #4caf50; /* Retro Green terminal text */
+            padding: 15px;
+            margin-bottom: 20px;
+            font-size: 0.85rem;
+        }
+    </style>
 </head>
 <body>
+
+<div class="zone zone-left"></div>
+<div class="zone zone-mid-left"></div>
+<div class="zone zone-center"></div>
+<div class="zone zone-mid-right"></div>
+<div class="zone zone-right"></div>
+
+<div class="background-layer"></div>
+<main class="game-container">
+    <h1>Mobile Command Unit</h1>
+
+    <div class="hud-text">
+        LOCATION: <span class="status-stable">PERIMETER FENCE</span>
+    </div>
+    <div class="hud-text">
+        STATUS: <span class="status-stable">SECURE</span>
+    </div>
+
+    <p>
+        The rain drums rhythmically against the metal roof of the van. It smells like stale coffee and old electronics in here.
+        Outside the windshield, the Ashwood tree line is just a wall of black jagged shapes.
+    </p>
+
+    <p>
+        Your equipment is humming on the passenger seat.
+    </p>
+
+    <div class="laptop-screen">
+        > SYSTEM READY...<br>
+        > 1 NEW CONTRACT AVAILABLE:<br>
+        > OBJECTIVE: Retrieve Silver Locket<br>
+        > LOCATION: Sector 1 (The Clearing)<br>
+        > PAYOUT: $500
+    </div>
+
+    <div class="choice-container">
+        <a href="the-clearing.html" class="btn">Grab gear and exit Van</a>
+
+        <a href="#" class="btn" onclick="alert('System Message: Database corrupted. Reboot required.')">Check Database</a>
+
+        <a href="../index.html" class="btn" style="opacity: 0.5;">Rest (Save & Quit)</a>
+    </div>
+</main>
 
 </body>
 </html>
