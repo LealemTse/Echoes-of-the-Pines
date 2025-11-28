@@ -3,39 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Clearing</title>
-    <link rel="stylesheet" href="../styles.css">
-    <style>
-        .background-layer{
-            background: linear-gradient(to bottom, #1a2a1d, #0f1923);
-        }
-    </style>
+    <title>Zone Entry, Sector 1</title>
+    <link rel="stylesheet" href="../style.css">
+
 </head>
 <body>
-    <div class="background-layer"></div>
-    <dic class="fog-layer"></dic>
-    <main class="game-container">
-        <h1>The Clearing</h1>
-        <p>
-            The air is colder here, You stand at the ege os Ashwood valley.
-            The pines tower about, swaying even though there no wind;
-        </p>
-        <p>
-            On an old stump to your left you see
-            <span class="secert-text" title="W strange ttriangl shol is carced here.">
-                strange marking
-            </span>
-            that seem to hum when you look closely.
-        </p>
 
-        <p>
-            The path splits a head.
-        </p>
-        <div class="choice-container">
-            <a href="#" class="btn">Inspect the Stump closer</a>
-            <a href="#" class="btn">Walk toward the river Sound</a>
-            <a href="../index.html" class="btn" style="opacity: 0.5;">(Turn Back)</a>
-        </div>
-    </main>
+<div class="background-layer"></div>
+<div class="fog-layer"></div>
+
+<main class="game-container">
+    <h1>Zone Entry, Section 1</h1>
+
+    <p>
+        You slide through the hole in the chain-link fence. The "No Trespassing" sign lies face down in the mud.
+    </p>
+
+    <p>
+        The air instantly tastes metallic—the taste of <strong>The Static</strong>.
+        You check your wrist-monitor.
+        <br>
+        <span style="color: #ff5555;">[Sanity Stability: 98%]</span>
+    </p>
+
+    <p>
+        Your client's instructions are clear: <em>"Reach the old Ranger Tower. Secure the silver locket. Get out before sundown."</em>
+    </p>
+
+    <div class="radio-msg">
+        <p><strong>Radio (Static):</strong> "...kzzt... anyone out there? I saw a flashlight near the fence. You're not supposed to be here."</p>
+    </div>
+
+    <div class="hub-text">
+        SANITY: <span class="status-danger">98% (DROPPING) </span>
+    </div>
+
+    <div class="choice-container">
+        <a href="ranger-path.html" class="btn">Push through the bushes toward the Tower</a>
+
+        <a href="#" class="btn" onclick="alert('The radio is old, model 1996. The battery light is blinking red.')">Inspect the radio on your belt</a>
+
+        <a href="../index.html" class="btn" style="opacity: 0.6;">(Abort Mission) Return to Van</a>
+    </div>
+</main>
+
 </body>
 </html>
