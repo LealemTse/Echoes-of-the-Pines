@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Anomaly Investigation</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .background-layer {
+            /* Try to find a close-up image of moss or wood for this one */
+            background-image: url('../assets/stump-close-up.jpg');
+        }
+    </style>
+</head>
+<body>
+
+<div class="background-layer"></div>
+<div class="fog-layer"></div>
+
+<main class="game-container">
+    <h1>Investigation: Anomaly 01</h1>
+
+    <div class="hud-text">
+        SANITY: <span class="status-danger">95% (Unstable)</span>
+    </div>
+
+    <div class="story-block">
+        <p>
+            You kneel in the mud. Up close, the moss isn't just glowing; it's <em>pulsing</em>.
+            It hasn't grown randomly. It has been cultivated into a shape.
+        </p>
+        <p>
+            You pull out your UV light (Standard Issue) and shine it on the bark.
+        </p>
+        <label for="step-1" class="next-btn">> Focus the light</label>
+    </div>
+
+    <input type="checkbox" id="step-1" class="story-toggle">
+    <div class="hidden-content story-block">
+        <p>
+            Under the UV beam, a symbol burns in bright violet against the wood.
+            It looks like a pine tree, but inverted—roots reaching for the sky, branches digging into the earth.
+        </p>
+        <div class="radio-msg">
+            <p class="char-name">RADIO (104.5):</p>
+            <span class="char-talk">
+                    "Don't touch it. That's a marker. It means 'Do Not Enter' in the old tongue."
+                </span>
+        </div>
+        <p>
+            Your head throbs. The Sanity Monitor on your wrist beeps once.
+        </p>
+        <label for="step-2" class="next-btn">> Take a photo for the Client</label>
+    </div>
+
+    <input type="checkbox" id="step-2" class="story-toggle">
+    <div class="hidden-content story-block">
+        <p>
+            <em>*CLICK*</em>
+        </p>
+        <p>
+            Evidence secured. As the flash fades, you hear a twig snap behind you. Not a deer. Too heavy.
+        </p>
+
+        <div class="choice-container">
+            <a href="ranger-tower.html" class="btn">Get up and run toward the Tower</a>
+            <a href="../scenes/van-interior.html" class="btn btn-abort">Too dangerous. Leave. (Abort)</a>
+        </div>
+    </div>
+
+</main>
+</body>
+</html>

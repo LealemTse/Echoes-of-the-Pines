@@ -2,10 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zone Entry, Sector 1</title>
+    <title>Sector 1: The Clearing</title>
     <link rel="stylesheet" href="../style.css">
-
+    <style>
+        .background-layer {
+            background-image: url('../thingsUsed/bg.png');
+        }
+    </style>
 </head>
 <body>
 
@@ -13,38 +16,51 @@
 <div class="fog-layer"></div>
 
 <main class="game-container">
-    <h1>Zone Entry, Section 1</h1>
+    <h1>Sector 1: The Clearing</h1>
 
-    <p>
-        You slide through the hole in the chain-link fence. The "No Trespassing" sign lies face down in the mud.
-    </p>
-
-    <p>
-        The air instantly tastes metallic—the taste of <strong>The Static</strong>.
-        You check your wrist-monitor.
-        <br>
-        <span style="color: #ff5555;">[Sanity Stability: 98%]</span>
-    </p>
-
-    <p>
-        Your client's instructions are clear: <em>"Reach the old Ranger Tower. Secure the silver locket. Get out before sundown."</em>
-    </p>
-
-    <div class="radio-msg">
-        <p><strong>Radio (Static):</strong> "...kzzt... anyone out there? I saw a flashlight near the fence. You're not supposed to be here."</p>
+    <div class="story-block">
+        <p>
+            You slide through the fence. The air tastes metallic. You have stepped off the map and into Ashwood Valley.
+        </p>
+        <p>
+            The trees here are too tall. They block out the sky.
+        </p>
+        <label for="reveal-1" class="next-btn">> Look around</label>
     </div>
 
-    <div class="hub-text">
-        SANITY: <span class="status-danger">98% (DROPPING) </span>
+
+    <input type="checkbox" id="reveal-1" class="story-toggle">
+
+    <div class="hidden-content story-block">
+        <p>
+            You scan the area. To your left, an old stump is covered in strange, glowing moss.
+        </p>
+        <div class="radio-msg">
+            <p class="char-name">RADIO (104.5):</p>
+            <span class="char-talk">
+                    "...kzzt... I see a flashlight near the fence. Turn it off."
+                </span>
+        </div>
+        <label for="reveal-2" class="next-btn">> Grab the radio</label>
     </div>
 
-    <div class="choice-container">
-        <a href="ranger-path.html" class="btn">Push through the bushes toward the Tower</a>
 
-        <a href="#" class="btn" onclick="alert('The radio is old, model 1996. The battery light is blinking red.')">Inspect the radio on your belt</a>
+    <input type="checkbox" id="reveal-2" class="story-toggle">
 
-        <a href="../index.html" class="btn" style="opacity: 0.6;">(Abort Mission) Return to Van</a>
+    <div class="hidden-content story-block">
+        <p>
+            You fumble with the dial, but the static clears on its own.
+        </p>
+        <p>
+            "You're not supposed to be here," the voice says.
+        </p>
+
+        <div class="choice-container">
+            <a href="inspect-stump.html" class="btn">Inspect the Stump</a>
+            <a href="ranger-path.html" class="btn">Ignore him and keep walking</a>
+        </div>
     </div>
+
 </main>
 
 </body>

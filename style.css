@@ -1,11 +1,11 @@
 
 :root {
-    --bg-color: #0f1923;
-    --text-color: #e3af45;
-    --tech-color: #d4a373;
-    --accent-color: rgba(30, 50, 39, 0.69);
-    --secret-color: #1e3227;
-    --danger-color: #bf3a3a;
+    --bg-color: #0f1923;    /* Dark Midnight Blue */
+    --text-color: #e0e0e0;  /* Off-white */
+    --accent-color: #d4a373;/* Faded Gold (Story items) */
+    --tech-color: #ffcc00;  /* Amber (Radio/UI) */
+    --danger-color: #ff5555;/* Red (Sanity/Danger) */
+    --secret-color: #64ffda;/* Cyan (Hidden clues) */
     --font-main: "CMU Serif", serif;
     --font-ui: 'Courier New', monospace;
 }
@@ -78,26 +78,38 @@ body {
     position: relative;
 }
 .game-container{
-    width: 80%;
-    max-width: 800px;
-    /*background:*/
+    width: 100%;
+    max-width: 900px;
+
+    /* Center the container */
+    margin: auto;
+
+    /* Create a clear, separate text/choice box */
+    background: rgba(0, 0, 0, 0.9); /* Opaque black for readability */
     padding: 40px;
-    border: 1px solid var(--accent-color);
+    border: 1px solid #333;
     border-top: 4px solid var(--accent-color);
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.9);
+    box-shadow: 0 0 30px rgba(0,0,0,0.9);
     text-align: left;
     position: relative;
     z-index: 20;
+
+    /* Add fixed height and allow scrolling inside the container */
+    max-height: 85vh; /* Limits the container height */
+    overflow-y: auto; /* IMPORTANT: Allows scrolling within this box */
 }
 
 
-h1{
-    font-family: "CMU Serif", serif;
-    letter-spacing: 4px;
+h1 {
+    font-family: var(--font-ui);
+    letter-spacing: 2px; /* Less aggressive tracking */
     text-transform: uppercase;
-    color: var(--text-color);
-    margin-bottom: 10px;
+    color: var(--accent-color);
+    margin-top: 0;
+    border-bottom: 1px solid #333;
+    padding-bottom: 15px;
 }
+
 p{
     font-family: "CMU Serif", serif;
     font-size: 1.2rem;
@@ -135,27 +147,26 @@ p{
 }
 
 
-
-.choice-container{
+.choice-container {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 12px; /* Slightly smaller gap */
     margin-top: 30px;
+    border-top: 1px solid #333;
     padding-top: 20px;
-    border-top: 1px solid #333
-
 }
-
-.btn{
-    background: transparent;
-    border: 1px solid var(--text-color);
-    border-radius: 5px;
-    color: var(--text-color);
-    padding: 15px 20px;
-    text-decoration: none;
-    font-family: "CMU Serif", serif;
-    font-size: 1.2rem;
-    transition: all 0.3s ease;
+.btn {
+        display: block;
+        background: transparent;
+        border: 1px solid #555;
+        color: var(--text-color);
+        padding: 12px 20px; /* Smaller padding */
+        text-decoration: none;
+        font-family: var(--font-ui); /* Use the clean UI font */
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        text-align: center;
+        text-transform: none; /* No more forced uppercase like the comic style */
 }
 .btn:hover{
     background-color: var(--accent-color);
@@ -280,3 +291,50 @@ audio{
     transition: opacity 1s ease-in-out;
 }
 .hidden { opacity: 0; pointer-events: none; }
+
+
+
+/* --- CSS-ONLY INTERACTIVE STORY --- */
+
+/* 1. Hide the actual checkboxes (we only want to see the labels) */
+.story-toggle {
+    display: none;
+}
+
+/* 2. Hide the future story parts by default */
+.hidden-content {
+    display: none;
+    opacity: 0;
+    transition: opacity 1s ease-in;
+}
+
+/* 3. THE LOGIC: When checkbox is Checked, show the content after it */
+.story-toggle:checked ~ .hidden-content {
+    display: block;
+    animation: fadeIn 0.8s forwards;
+}
+
+/* 4. THE MAGIC: Hide the "Continue" button after you click it */
+.story-toggle:checked + .story-block .next-btn {
+    display: none;
+}
+
+/* Animation for smooth appearing */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Styling the "Continue" text */
+.next-btn {
+    color: var(--accent-color);
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: underline;
+    display: inline-block;
+    margin-top: 10px;
+}
+.next-btn:hover {
+    color: #fff;
+    text-shadow: 0 0 5px var(--accent-color);
+}
