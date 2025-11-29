@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tower 4 Interior</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .background-layer {
+            /* An image looking out a window at sunset or a dusty room */
+            background-image: url('../assets/tower-interior.jpg');
+        }
+    </style>
+</head>
+<body>
+
+<div class="background-layer"></div>
+<main class="game-container">
+    <h1>Location: Tower 4</h1>
+
+    <div class="hud-text">
+        OBJECTIVE: <span class="status-stable">LOCATE LOCKET</span>
+    </div>
+
+    <div class="story-block">
+        <p>
+            The door creaks open. The air inside is stale, smelling of old paper and dust.
+            It looks like the ranger just stepped out for a break... in 1999.
+        </p>
+        <p>
+            A coffee mug sits on the desk, the liquid inside evaporated to a black stain.
+            Maps of the valley cover the walls, covered in frantic red marker lines.
+        </p>
+        <label for="step-1" class="next-btn">> Search the desk</label>
+    </div>
+
+    <input type="checkbox" id="step-1" class="story-toggle">
+    <div class="hidden-content story-block">
+        <p>
+            You open the top drawer. There, resting on a pile of unpaid bills, is the <strong>Silver Locket</strong>.
+        </p>
+        <p>
+            You reach for it, but the radio crackles to life. This time, the voice is crystal clear.
+        </p>
+        <div class="radio-msg">
+            <p class="char-name">RADIO (104.5):</p>
+            <span class="char-talk">
+                    "Wait. Check the inscription on the back."
+                </span>
+        </div>
+        <label for="step-2" class="next-btn">> Turn the locket over</label>
+    </div>
+
+    <input type="checkbox" id="step-2" class="story-toggle">
+    <div class="hidden-content story-block">
+        <p>
+            The silver is warm. Scratched into the back are the words:
+            <br><br>
+            <em>"For Emily. So she never gets lost in the Static."</em>
+        </p>
+        <div class="radio-msg">
+            <p class="char-name">RADIO (104.5):</p>
+            <span class="char-talk">
+                    "That locket is an anchor. If you take it out of the valley, the fog... it gets loose.
+                    Your client knows that."
+                </span>
+        </div>
+        <p>
+            You hold the item. $500 payout if you take it. But the voice sounds terrified.
+        </p>
+
+        <div class="choice-container">
+            <a href="mission-complete-money.html" class="btn">Take the Locket (Complete Contract)</a>
+            <a href="mission-complete-moral.html" class="btn">Leave it and return to Van (Fail Contract)</a>
+        </div>
+    </div>
+
+</main>
+</body>
+</html>
