@@ -7,63 +7,60 @@
     <link rel="stylesheet" href="../style.css">
     <style>
 
-        .background-layer {
+        .van-img{
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
-            background: linear-gradient(to bottom, #1a1a1a, #2c1e1e);
         }
 
 
         .game-container {
             border-top: 4px solid #555;
-            background: rgba(10, 10, 10, 0.95);
+            background: #28271f;
+        }
+        .computer-screen{
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-
-        .laptop-screen {
-            font-family: 'Courier New', monospace;
-            background: #000;
-            border: 1px solid #333;
-            color: #4caf50;
-            padding: 15px;
-            margin-bottom: 20px;
-            font-size: 0.85rem;
-        }
     </style>
 </head>
-<body>
+<body >
 
-<div class="zone zone-left"></div>
-<div class="zone zone-mid-left"></div>
-<div class="zone zone-center"></div>
-<div class="zone zone-mid-right"></div>
-<div class="zone zone-right"></div>
 
-<div class="background-layer"></div>
 <main class="game-container">
     <h1>Mobile Command Unit</h1>
 
     <div class="hud-text">
         LOCATION: <span class="status-stable">PERIMETER FENCE</span>
     </div>
+
     <div class="hud-text">
         STATUS: <span class="status-stable">SECURE</span>
     </div>
-
+    <div class="van-img">
+        <img src="../thingsUsed/van.jpeg">
+    </div>
     <p>
         The rain drums rhythmically against the metal roof of the van. It smells like stale coffee and old electronics in here.
         Outside the windshield, the Ashwood tree line is just a wall of black jagged shapes.
     </p>
 
     <p>
-        Your equipment is humming on the passenger seat.
+        Your equipment is humming on the passenger seat
+        <br>
     </p>
+    <label for="reveal-4" class="next-btn"> Take a Look </label>
 
-    <div class="laptop-screen">
-        > SYSTEM READY...<br>
-        > 1 NEW CONTRACT AVAILABLE:<br>
-        > OBJECTIVE: Retrieve Silver Locket<br>
-        > LOCATION: Sector 1 (The Clearing)<br>
-        > PAYOUT: $500
+    <input type="checkbox" id="reveal-4" class="story-toggle">
+
+    <div class="hidden-content story-toggle ">
+        <div class="computer-screen">
+            <img src="../thingsUsed/vancomp.webp">
+        </div>
     </div>
 
     <div class="choice-container">
