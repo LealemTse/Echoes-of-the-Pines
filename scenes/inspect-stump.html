@@ -5,14 +5,16 @@
     <title>Anomaly Investigation</title>
     <link rel="stylesheet" href="../style.css">
     <style>
-        .background-layer {
-            background-image: url('../thingsUsed/stump-close-up.jpg');
+        .image{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
         }
     </style>
 </head>
 <body>
 
-<div class="background-layer"></div>
 <div class="fog-layer"></div>
 
 <main class="game-container">
@@ -24,11 +26,20 @@
 
     <div class="story-block">
         <p>
-            You kneel in the mud. Up close, the moss isn't just glowing; it's <em>pulsing</em>.
-            It hasn't grown randomly. It has been cultivated into a shape.
+            You kneel in the mud, your boots sinking slightly. Up close, the moss isn’t just glowing it’s <em>pulsing</em>,
+            a slow, rhythmic beat, like it has a heartbeat of its own. It hasn’t grown randomly; someone or something
+            has carefully cultivated it into a deliberate, unnerving shape.
         </p>
         <p>
-            You pull out your UV light (Standard Issue) and shine it on the bark.
+            Your fingers tremble as you pull out your UV light. A beam cuts through the fog,
+            striking the bark. The moss reacts immediately, illuminating patterns that weren’t visible before:
+            intricate symbols, almost like a language carved in living green.
+        </p>
+        <div class="image">
+            <img src="../thingsUsed/ano-1.jpeg">
+        </div>
+        <p>A shiver runs down your spine. Whoever or whatever did this knew you would see it.
+            It hasn't grown randomly. It has been cultivated into a shape.
         </p>
         <label for="step-1" class="next-btn">> Focus the light</label>
     </div>
@@ -36,14 +47,19 @@
     <input type="checkbox" id="step-1" class="story-toggle">
     <div class="hidden-content story-block">
         <p>
-            Under the UV beam, a symbol burns in bright violet against the wood.
-            It looks like a pine tree, but inverted—roots reaching for the sky, branches digging into the earth.
+            Under the UV beam, a symbol burns bright green against the dark wood. At first glance, it resembles a pine tree but inverted.
+            Its roots claw toward the sky, while its branches dig deep into the earth, twisting unnaturally into the mud.
+        </p>
+        <p>
+            The sight makes your stomach tighten. It’s as if the forest itself is watching, marking its territory—or issuing a warning.
+        <br>
+            Something about this place is alive… and it knows you’re here.
         </p>
         <div class="radio-msg">
             <p class="char-name">RADIO (104.5):</p>
             <span class="char-talk">
-                    "Don't touch it. That's a marker. It means 'Do Not Enter' in the old tongue."
-                </span>
+                “Don't touch it. That's a marker. It means 'Do Not Enter' in the old tongue.”
+            </span>
         </div>
         <p>
             Your head throbs. The Sanity Monitor on your wrist beeps once.
