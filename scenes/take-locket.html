@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Containment Breach</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+
+        .breach-text {
+            color: #ccff00; /* Neon green/yellow for a corrosive, artificial look */
+            text-shadow: 0 0 10px #ccff00;
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="fog-layer fog-front" style="opacity: 0.9; animation-duration: 15s;"></div>
+
+<main class="game-container">
+    <h1>BREACH: CONTAINMENT FAILURE</h1>
+
+    <div class="hud-text">
+        PAYOUT: <span class="status-stable">$500 (COLLECTED)</span> | SANITY: <span class="status-danger">5% (CRITICAL)</span>
+    </div>
+
+    <div class="story-block">
+        <p>
+            The $500 payout is too much to ignore. The ranger's warnings were probably just paranoia. You wrap the silver locket in your handkerchief and secure it deep in your inner pocket.
+        </p>
+        <p>
+            *CLICK*
+        </p>
+        <p>
+            The noise wasn't the radio. It was the sound of the locket's clasp closing.
+        </p>
+        <label for="breach-1" class="next-btn"> Turn to leave</label>
+    </div>
+
+    <input type="checkbox" id="breach-1" class="story-toggle">
+    <div class="hidden-content story-block">
+        <p>
+            The room immediately goes dark. The fluorescent light above flickers, then bursts, showering the desk with glass.
+        </p>
+        <p>
+            The radio on the desk shrieks a noise you've never heard: **pure, unmixed static.** It is a wall of sound that vibrates your teeth.
+        </p>
+        <div class="radio-msg">
+            <p class="char-name breach-text">Radio (104.5)</p>
+            <span class="char-talk breach-text">
+                “What are you doing? put it back now!”
+            </span>
+        </div>
+        <p>
+            The red marker lines on the map flash once, then instantly dissolve into dust. The containment circuit is broken.
+        </p>
+        <label for="breach-2" class="next-btn">Look out the window</label>
+    </div>
+
+    <input type="checkbox" id="breach-2" class="story-toggle">
+    <div class="hidden-content story-block">
+        <p>
+            Outside the window, the fog is no longer mist. It is thick, corrosive black smoke, moving like a panicked tsunami. The trees are whipping violently.
+        </p>
+        <p>
+            You catch a glimpse of something *in* the fog—something tall, with too many joints, before your brain refuses to process the sight. You taste copper.
+        </p>
+        <div class="radio-msg">
+            <p class="char-name">RADIO (104.5 - FADING):</p>
+            <span class="char-talk">
+                    “Pu..Put.IT BAC..K... didn't... stop... ”
+            </span>
+        </div>
+        <p>
+           You try to adjust the radio, twisting the dial almost snapping it off. But noting just a loud static
+        </p>
+        <label for="breach-3" class="next-btn">Run Out</label>
+
+        <input type="checkbox" id="breach-3" class="story-toggle">
+        <div class="hidden-content story-block">
+            <p>
+                You run out but the fog is to thick you cant see the stars and fall.
+            </p>
+            <p>
+                Everything starts to fade. Before you know it you hear a loud laughter,
+            </p>
+            <div class="radio-msg">
+                <p class="char-name">Unknow ???:</p>
+                <span class="char-talk">
+                    “Thank you, David Thank you!.... ”
+                </span>
+            </div>
+            <p>
+                You get scared. “How does it know my name?”
+            </p>
+            <p>
+                Every thing turn to darkness. you are not leveing the forest.
+            </p>
+            <p class="char-name glitch-text" style="text-align: center; font-size: 35px "> You are Part of The Forest Now</p>
+
+        </div>
+
+        <div class="choice-container">
+            <a href="../scenes/van-interior.html?payout=500" class="btn btn-abort">JUMP FROM TOWER & RUN (Emergency Exit)</a>
+        </div>
+    </div>
+
+</main>
+</body>
+</html>

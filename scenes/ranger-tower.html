@@ -4,25 +4,6 @@
     <meta charset="UTF-8">
     <title>Tower 4 Interior</title>
     <link rel="stylesheet" href="../style.css">
-    <style>
-
-        .handwritten-note {
-            font-family: 'Courier New', monospace;
-            color: #ccc;
-            border-left: 2px solid #555;
-            padding-left: 15px;
-            font-style: italic;
-            margin: 15px 0;
-        }
-
-        .clue-item {
-            border: 1px solid var(--accent-color);
-            background: rgba(212, 163, 115, 0.1);
-            padding: 15px;
-            margin: 15px 0;
-            text-align: center;
-        }
-    </style>
 </head>
 <body>
 
@@ -41,41 +22,44 @@
         </p>
         <label for="step-4" class="next-btn">Answer the radio</label>
      </div>
-    <div>
+
     <input type="checkbox" id="step-4" class="story-toggle">
     <div class="hidden-content story-block">
         <div class="radio-msg">
+            <p class="char-name">RADIO (104.5):</p>
             <span class="char-talk">
-                “How did get here without getting caught?”
+                “Where are, are you there yet?”
             </span>
         </div>
         <div class="radio-msg">
+            <p class="char-name">You:</p>
+
             <span class="char-talk">
-                “I don't know I run as fast as i could”
+                “Ya, I'm getting in the tower, I run as fast as I can”
             </span>
         </div>
-    </div>
         <p>
-            The door creaks open. The cabin smells of old paper and ozone.
+            The door creaks open. The tower smells of old paper.
             Maps cover every inch of the walls, obscured by frantic red marker lines.
         </p>
         <p>
             A handwritten note is pinned to the center of the main map with a knife.
         </p>
         <label for="step-1" class="next-btn"> Read the note</label>
-
+    </div>
     <input type="checkbox" id="step-1" class="story-toggle">
     <div class="hidden-content story-block">
         <div class="handwritten-note">
-            "They aren't lost. They are being kept. The fog uses the metal as a conductor.
-            If you find the Anchor (The Locket), DO NOT TAKE IT OUT yet.
-            Place it on the map. Align the inscription with the Ley Lines."
+            “They aren't lost. <br>
+            They are being kept. The fog uses the metal as a conductor.<br>
+            If you find the Anchor, DO NOT TAKE IT OUT yet.<br>
+            Place it on the map. Align the inscription with the Ley Lines.”
         </div>
         <p>
-            You look down. A loose floorboard near the window has been pried up.
+            You get confused, then you look down. A loose floorboard near the window has been pried up.
             Something silver glints in the darkness beneath it.
         </p>
-        <label for="step-2" class="next-btn">> Retrieve the Locket</label>
+        <label for="step-2" class="next-btn"> Remove the floorboard</label>
     </div>
 
     <input type="checkbox" id="step-2" class="story-toggle">
@@ -85,19 +69,32 @@
             <em>Inscription: 44°N - The Singing Tree</em>
         </div>
         <p>
-            It's heavy. As soon as you touch it, the static in your ears gets louder.
+            It's heavy. As soon as you touch it, the static gets louder.
             The radio clicks on.
         </p>
         <div class="radio-msg">
             <p class="char-name">RADIO (104.5):</p>
             <span class="char-talk">
-                "You found it. Okay, listen. That Ranger wasn't crazy. He was trying to map the perimeter."
+                “You found it. Okay, listen. That Ranger wasn't crazy. He was trying to map the Perimeter.”
+            </span>
+        </div>
+        <div class="radio-msg">
+            <p class="char-name">You:</p>
+            <span class="char-talk">
+                “What? What is the Perimeter?”
+            </span>
+        </div>
+
+        <div class="radio-msg">
+            <p class="char-name">RADIO (104.5):</p>
+            <span class="char-talk">
+                “Bring the locket to the wall map.”
             </span>
         </div>
         <p>
-            You hold the locket up to the wall map, matching the "Singing Tree" inscription to a red circle on the paper.
+            You hold the locket up to the wall map, it a matching for the "Singing Tree" inscription to a red circle on the paper.
         </p>
-        <label for="step-3" class="next-btn">> Align Locket with Map</label>
+        <label for="step-3" class="next-btn"> Align Locket with Map</label>
     </div>
 
     <input type="checkbox" id="step-3" class="story-toggle">
@@ -112,18 +109,22 @@
         <div class="radio-msg">
             <p class="char-name">RADIO (104.5):</p>
             <span class="char-talk">
-                "If you remove that locket, you break the circuit. The fog will expand.
-                But if you leave it... the things trapped inside stay trapped. Including the missing people."
+                “If you remove that locket, you break the circuit. The fog will expand.
+                But if you leave it... the things trapped inside stay trapped. Including the missing people.”
             </span>
         </div>
-        <p>
-            The mystery has shifted. You aren't just retrieving an heirloom. You are holding the key to the valley's containment.
-        </p>
+        <div class="radio-msg">
+            <p class="char-name">RADIO (104.5):</p>
+            <span class="char-talk">
+                “You don't know it, but it's you're now the gate kipper of the forest”
+            </span>
+        </div>
+
+
 
         <div class="choice-container">
-            <a href="take-locket.html" class="btn">Take the Locket (Break the seal & Collect Pay)</a>
-            <a href="leave-locket.html" class="btn">Leave the Locket (Maintain the seal)</a>
-            <a href="investigate-map-further.html" class="btn">Copy the Map coordinates (Unlock Chapter 2)</a>
+            <a href="take-locket.html" class="btn">Ignore the Radio and Take the Locket (Break the seal & Collect Pay)</a>
+            <a href="investigate-map-further.html" class="btn">Copy the Map coordinates and Start Your Journey</a>
         </div>
     </div>
     </div>
