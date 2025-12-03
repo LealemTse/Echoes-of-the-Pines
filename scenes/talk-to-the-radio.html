@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Radio Signal: 104.5</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<div class="fog-layer"></div>
+
+<main class="game-container">
+    <h1>Signal: 104.5 "The Echo"</h1>
+
+    <div class="hud-text">
+        STATUS: <span class="status-danger">COMMUNICATION</span> | SANITY: <span class="status-danger">90%</span>
+    </div>
+
+    <div class="story-block">
+        <p>
+            You lift the WakiTalki to your mouth. The static is thick, like trying to shout through a wet cloth.
+        </p>
+        <div class="radio-msg">
+            <p class="char-name">YOU:</p>
+            <span class="char-talk">
+                    “What is going on?, Who are you, did you send out the transmission.”
+                </span>
+        </div>
+        <p>
+            There is a long moment of only static. A low, wet cough, close enough that it feels like someone is standing right behind you.
+            <br>
+            The radio crackles again.
+        </p>
+        <label for="step-1" class="next-btn"> Wait for a response</label>
+    </div>
+
+    <input type="checkbox" id="step-1" class="story-toggle">
+    <div class="hidden-content story-block">
+        <div class="radio-msg">
+            <p class="char-name">RADIO (104.5):</p>
+            <span class="char-talk">
+                    “You shouldn't have answered. They know you're here now.”
+            </span>
+        </div>
+        <p>
+            “They”?
+            <br>
+            You look back down the path, but the fog has thickened behind you. You can't even see the path anymore.
+        </p>
+        <label for="step-2" class="next-btn">Press him for details</label>
+    </div>
+
+    <input type="checkbox" id="step-2" class="story-toggle">
+    <div class="hidden-content story-block">
+        <div class="radio-msg">
+            <p class="char-name">RADIO (104.5 - URGENT):</p>
+            <span class="char-talk">
+                    "I can't talk. They’re moving. They’re using the echo. Go. Go now. Don't look at the lights, and *don't stop* until you reach the tower!"
+                </span>
+        </div>
+
+        <div class="choice-container">
+            <a href="ranger-tower.html" class="btn">Shove the radio in your bag and run (Proceed)</a>
+            <a href="radio-failure.html" class="btn btn-abort">Stay put and try to stabilize the signal</a>
+        </div>
+    </div>
+
+</main>
+</body>
+</html>

@@ -5,25 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Path to Ranger Tower</title>
     <link rel="stylesheet" href="../style.css">
-    <style>
-        /*.background-layer{
-            background-image: url('../img/.png');
-        }*/
-        .game-container{
-            background: rgba(0, 0, 0, 0.7);
-            text-align: center;
-        }
-    </style>
+
 </head>
+
 <body>
-    <div class="zone zone-left"></div>
-    <div class="zone zone-mid-left"></div>
-    <div class="zone zone-center"></div>
-    <div class="zone zone-mid-right"></div>
-    <div class="zone zone-right"></div>
 
-
-    <div class="background-layer"></div>
     <div class="fog-layer"></div>
     <div class="fog-layer fog-back"></div>
     <div class="fog-layer fog-front"></div>
@@ -36,21 +22,40 @@
         </div>
 
         <p>
-            The voice crackles in your ear, too close, too real. "Tower 4. Don't look at the lights"
-            But there are no lights. Just the deepening gloom of the forest.
+            The voice crackles in your ear again it feels so real, like someone whispering inches from your skin.
         </p>
-        <div class="comic-panel">
-            <img src="../thingsUsed/tower.jpg" alt="Thick forest path with glowing eyes">
-            <div class="comic-caption">
-                The path narrows,A chill, deeper than the air, settles in your bones.
-                "Was that a faint glow? or imagining thing"
+        <div class="radio-msg">
+            <p class="char-name">RADIO (104.5):</p>
+            <span class="char-talk">
+                “Stop, you are getting too closer, cant you see the lights Go back”
+            </span>
+        </div>
+        <p>
+            You swallow hard. Lights?
+        </p>
+        <label for="lights" class="next-btn">Look Closer</label>
+
+        <input type="checkbox" id="lights" class="story-toggle">
+        <div class="hidden-content story-block">
+            <p>
+                There are no lights. Only the deepening gloom of the forest, thick enough to feel like a weight on your shoulders.
+                The fog curls tighter around the trees. Shadows stretch in ways that don’t make sense. <br>
+                You scan the undergrowth, heart hammering, but all you see are , rotted stumps, and the faint glow of the symbol behind you.
+            </p>
+            <div class="tower-img">
+                <img src="../thingsUsed/tower.webp" alt="Thick forest path with glowing eyes" style="display: flex; width:100%; height:85%; justify-content: center; align-items: center">
             </div>
-        </div>
-        <div class="choice-container">
-            <a href="ranger-path.html" class="btn">Procedd cautiously</a>
-            <a href="#" class="btn">Try to call out on the radio</a>
-            <a href="the-clearing.html" class="btn btn-abort" onclick="animateAndRedirect('the-clearing.html')">Retreat to the clearing</a>
-        </div>
+            <p>
+                The radio pops. Once.<br>
+                Twice.<br>
+                Like a heartbeat.
+            </p>
+            <div class="choice-container">
+                <a href="ranger-path.html" class="btn">Proceed cautiously</a>
+                <a href="talk-to-the-radio.html" class="btn">Try to call out on the radio</a>
+                <a href="the-clearing.html" class="btn btn-abort" onclick="animateAndRedirect('the-clearing.html')">Retreat to the clearing</a>
+            </div>
+      </div>
     </main>
 
 </body>

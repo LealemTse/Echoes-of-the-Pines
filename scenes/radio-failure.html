@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Signal Lost</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+
+        .glitch-text {
+            font-family: 'Courier New', monospace;
+            color: #ff0000;
+            text-shadow: 2px 0 #fff, -2px 0 #000;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="fog-layer fog-front"></div>
+
+
+<main class="game-container">
+    <h1>SIGNAL CRITICAL</h1>
+
+    <div class="hud-text">
+        SANITY: <span class="status-danger">CRITICAL FAILURE (0%)</span>
+    </div>
+
+
+    <div class="story-block">
+        <p>
+            You ignore the warning. You stay put, your fingers trembling as you twist the dial, trying to lock onto the friendly voice.
+        </p>
+        <p>
+            “Come in”, you whisper. “Where should I go?”
+        </p>
+        <p>
+            The static abruptly cuts out. Complete silence. The forest has gone dead quiet. No wind. No birds.
+        </p>
+        <label for="fail-1" class="next-btn"> Listen closely</label>
+    </div>
+
+    <input type="checkbox" id="fail-1" class="story-toggle">
+    <div class="hidden-content story-block">
+        <p>
+            A sound comes from the speaker. It’s not the stranger. It’s a recording.
+        </p>
+        <div class="radio-msg">
+            <p class="char-name">RADIO (???):</p>
+            <span class="char-talk">
+                    “...who is this?...”
+                </span>
+        </div>
+        <p>
+            Your blood runs cold. That’s <em>your</em> voice. Recorded from ten seconds ago.
+            But it sounds... wrong. Wet. Hungry.
+        </p>
+        <label for="fail-2" class="next-btn"> Drop the radio</label>
+    </div>
+
+
+    <input type="checkbox" id="fail-2" class="story-toggle">
+    <div class="hidden-content story-block">
+        <p>
+            You throw the radio into the mud, but the voice doesn't stop. It gets louder.
+            It's not coming from the device anymore. It's coming from everywhere.
+        </p>
+        <div class="radio-msg" style="border-color: red; background: rgba(50,0,0,0.5);">
+            <p class="char-name glitch-text">Y O U</p>
+            <span class="char-talk glitch-text">
+                    WHO IS THIS? WHO IS THIS? WHO IS THIS?
+                </span>
+        </div>
+        <p>
+            Shadows lengthen. The trees seem to bend inward, like ribs in a chest cavity.
+            Your vision blurs white. .
+        </p>
+        <p class="char-name glitch-text" style="text-align: center; font-size: 35px ">The Static has you</p>
+
+        <div class="choice-container">
+            <a href="../scenes/van-interior.html" class="btn btn-abort">WAKE UP SCREAMING (Emergency Extraction)</a>
+        </div>
+    </div>
+
+</main>
+</body>
+</html>

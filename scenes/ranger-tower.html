@@ -5,74 +5,129 @@
     <title>Tower 4 Interior</title>
     <link rel="stylesheet" href="../style.css">
     <style>
-        .background-layer {
-            /* An image looking out a window at sunset or a dusty room */
-            background-image: url('../assets/tower-interior.jpg');
+
+        .handwritten-note {
+            font-family: 'Courier New', monospace;
+            color: #ccc;
+            border-left: 2px solid #555;
+            padding-left: 15px;
+            font-style: italic;
+            margin: 15px 0;
+        }
+
+        .clue-item {
+            border: 1px solid var(--accent-color);
+            background: rgba(212, 163, 115, 0.1);
+            padding: 15px;
+            margin: 15px 0;
+            text-align: center;
         }
     </style>
 </head>
 <body>
 
-<div class="background-layer"></div>
+
+<div class="fog-layer"></div>
 <main class="game-container">
     <h1>Location: Tower 4</h1>
 
     <div class="hud-text">
-        OBJECTIVE: <span class="status-stable">LOCATE LOCKET</span>
+        OBJECTIVE: <span class="status-stable">INVESTIGATE RANGER STATION</span>
     </div>
 
     <div class="story-block">
         <p>
-            The door creaks open. The air inside is stale, smelling of old paper and dust.
-            It looks like the ranger just stepped out for a break... in 1999.
+            As you approach the tower thing radio starts to beep.
+        </p>
+        <label for="step-4" class="next-btn">Answer the radio</label>
+     </div>
+    <div>
+    <input type="checkbox" id="step-4" class="story-toggle">
+    <div class="hidden-content story-block">
+        <div class="radio-msg">
+            <span class="char-talk">
+                “How did get here without getting caught?”
+            </span>
+        </div>
+        <div class="radio-msg">
+            <span class="char-talk">
+                “I don't know I run as fast as i could”
+            </span>
+        </div>
+    </div>
+        <p>
+            The door creaks open. The cabin smells of old paper and ozone.
+            Maps cover every inch of the walls, obscured by frantic red marker lines.
         </p>
         <p>
-            A coffee mug sits on the desk, the liquid inside evaporated to a black stain.
-            Maps of the valley cover the walls, covered in frantic red marker lines.
+            A handwritten note is pinned to the center of the main map with a knife.
         </p>
-        <label for="step-1" class="next-btn">> Search the desk</label>
-    </div>
+        <label for="step-1" class="next-btn"> Read the note</label>
 
     <input type="checkbox" id="step-1" class="story-toggle">
     <div class="hidden-content story-block">
-        <p>
-            You open the top drawer. There, resting on a pile of unpaid bills, is the <strong>Silver Locket</strong>.
-        </p>
-        <p>
-            You reach for it, but the radio crackles to life. This time, the voice is crystal clear.
-        </p>
-        <div class="radio-msg">
-            <p class="char-name">RADIO (104.5):</p>
-            <span class="char-talk">
-                    "Wait. Check the inscription on the back."
-                </span>
+        <div class="handwritten-note">
+            "They aren't lost. They are being kept. The fog uses the metal as a conductor.
+            If you find the Anchor (The Locket), DO NOT TAKE IT OUT yet.
+            Place it on the map. Align the inscription with the Ley Lines."
         </div>
-        <label for="step-2" class="next-btn">> Turn the locket over</label>
+        <p>
+            You look down. A loose floorboard near the window has been pried up.
+            Something silver glints in the darkness beneath it.
+        </p>
+        <label for="step-2" class="next-btn">> Retrieve the Locket</label>
     </div>
 
     <input type="checkbox" id="step-2" class="story-toggle">
     <div class="hidden-content story-block">
+        <div class="clue-item">
+            <strong>ITEM ACQUIRED: SILVER LOCKET</strong><br>
+            <em>Inscription: 44°N - The Singing Tree</em>
+        </div>
         <p>
-            The silver is warm. Scratched into the back are the words:
-            <br><br>
-            <em>"For Emily. So she never gets lost in the Static."</em>
+            It's heavy. As soon as you touch it, the static in your ears gets louder.
+            The radio clicks on.
         </p>
         <div class="radio-msg">
             <p class="char-name">RADIO (104.5):</p>
             <span class="char-talk">
-                    "That locket is an anchor. If you take it out of the valley, the fog... it gets loose.
-                    Your client knows that."
-                </span>
+                "You found it. Okay, listen. That Ranger wasn't crazy. He was trying to map the perimeter."
+            </span>
         </div>
         <p>
-            You hold the item. $500 payout if you take it. But the voice sounds terrified.
+            You hold the locket up to the wall map, matching the "Singing Tree" inscription to a red circle on the paper.
+        </p>
+        <label for="step-3" class="next-btn">> Align Locket with Map</label>
+    </div>
+
+    <input type="checkbox" id="step-3" class="story-toggle">
+    <div class="hidden-content story-block">
+        <p>
+            When the silver touches the paper, the red marker lines seem to shift.
+            You realize the pattern isn't random. The red circles form a <strong>Pentagon</strong> around the valley.
+        </p>
+        <p>
+            Tower 4 isn't a watchtower. It's a fence post. And the locket is a battery.
+        </p>
+        <div class="radio-msg">
+            <p class="char-name">RADIO (104.5):</p>
+            <span class="char-talk">
+                "If you remove that locket, you break the circuit. The fog will expand.
+                But if you leave it... the things trapped inside stay trapped. Including the missing people."
+            </span>
+        </div>
+        <p>
+            The mystery has shifted. You aren't just retrieving an heirloom. You are holding the key to the valley's containment.
         </p>
 
         <div class="choice-container">
-            <a href="mission-complete-money.html" class="btn">Take the Locket (Complete Contract)</a>
-            <a href="mission-complete-moral.html" class="btn">Leave it and return to Van (Fail Contract)</a>
+            <a href="take-locket.html" class="btn">Take the Locket (Break the seal & Collect Pay)</a>
+            <a href="leave-locket.html" class="btn">Leave the Locket (Maintain the seal)</a>
+            <a href="investigate-map-further.html" class="btn">Copy the Map coordinates (Unlock Chapter 2)</a>
         </div>
     </div>
+    </div>
+
 
 </main>
 </body>
