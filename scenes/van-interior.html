@@ -15,10 +15,6 @@
 
         }
 
-        .game-container {
-            border-top: 4px solid #555;
-            background: #28271f;
-        }
         .computer-screen{
             display: flex;
             justify-content: center;
@@ -29,8 +25,9 @@
 </head>
 <body >
 
-
+<div class="fog-layer"></div>
 <main class="game-container">
+
     <h1>Mobile Command Unit</h1>
 
     <div class="hud-text">
@@ -60,15 +57,17 @@
         <div class="computer-screen">
             <img src="../thingsUsed/vancomp.webp">
         </div>
+
+        <div class="choice-container">
+            <a href="the-clearing.html" class="btn">Grab gear and exit Van</a>
+
+            <a href="#" class="btn" onclick="alert('System Message: Database corrupted. Cant find the Transmission Detail. Reboot required.')">Check Transmission Detail</a>
+
+            <a href="../index.html" class="btn" style="opacity: 0.5;">Rest (Save & Quit)</a>
+        </div>
     </div>
 
-    <div class="choice-container">
-        <a href="the-clearing.html" class="btn">Grab gear and exit Van</a>
 
-        <a href="#" class="btn" onclick="alert('System Message: Database corrupted. Cant find the Transmission. Reboot required.')">Check Transmission Database</a>
-
-        <a href="../index.html" class="btn" style="opacity: 0.5;">Rest (Save & Quit)</a>
-    </div>
 </main>
 
 </body>
