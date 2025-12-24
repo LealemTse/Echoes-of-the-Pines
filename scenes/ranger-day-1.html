@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Day 1: The Watch</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        /* This container holds the 3D world */
+        #three-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 1; /* Behind the UI */
+        }
+
+        /* Adjust the game container to be slightly more transparent */
+        .game-container {
+            z-index: 10;
+            background: rgba(0, 0, 0, 0.7);
+            pointer-events: none; /* Allows mouse to pass through to the 3D scene */
+        }
+
+        .story-block, .next-btn, .choice-container {
+            pointer-events: auto; /* Re-enable clicking for the text and buttons */
+        }
+    </style>
+</head>
+<body>
+
+<div id="three-container"></div>
+
+<main class="game-container">
+    <h1>Day 1: The Shift Begins</h1>
+
+    <div class="hud-text">
+        TIME: <span class="status-stable">06:00 AM</span> | FREQUENCY: <span class="status-stable">104.5</span>
+    </div>
+
+    <div class="story-block">
+        <p>
+            The sun doesn't rise in Ashwood Valley; the sky simply turns a lighter shade of bruised purple.
+            You are no longer an intruder. You have the keys. You have the uniform.
+        </p>
+        <p>
+            You stand in the center of Tower 4. You can see the entire clearing through the panoramic windows.
+        </p>
+        <label for="d1-1" class="next-btn">> Log your first entry</label>
+    </div>
+
+    <input type="checkbox" id="d1-1" class="story-toggle">
+    <div class="hidden-content story-block">
+        <p>
+            You open the official Ranger Log. The previous entries are... concerning.
+        </p>
+        <div class="radio-msg">
+            <p class="char-name">LOGBOOK (Previous Ranger):</p>
+            <span class="char-talk">
+                    "The trees moved three inches closer to the tower tonight. I measured. They're circling."
+                </span>
+        </div>
+        <p>
+            You look out the window. Everything seems still. But the "Static" on your radio is humming with a new rhythm.
+        </p>
+
+        <div class="choice-container">
+            <a href="#" class="btn" onclick="startInvestigation()">Scan the Horizon with Binoculars</a>
+            <a href="radio-call.html" class="btn">Check the Radio Frequencies</a>
+        </div>
+    </div>
+</main>
+
+<script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+      }
+    }
+</script>
+
+<script type="module">
+    import * as THREE from 'three';
+
+    // 1. Scene Setup
+    const scene = new THREE.Scene();
+    scene.fog = new THREE.FogExp2(0x1a1a1a, 0.05); // Add 3D Fog!
+
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.getElementById('three-container').appendChild(renderer.domElement);
+
+    // 2. Simple Room (The Tower)
+    // We'll create a large box and put the camera inside
+    const geometry = new THREE.BoxGeometry(20, 10, 20);
+    const material = new THREE.MeshStandardMaterial({
+        color: 0x332211,
+        side: THREE.BackSide // Render the INSIDE of the box
+    });
+    const towerRoom = new THREE.Mesh(geometry, material);
+    scene.add(towerRoom);
+
+    // 3. Lighting
+    const light = new THREE.PointLight(0xffaa00, 50, 100); // Warm lamp light
+    light.position.set(0, 2, 0);
+    scene.add(light);
+    scene.add(new THREE.AmbientLight(0x404040, 2)); // Soft moonlight
+
+    camera.position.z = 0.1; // Put camera slightly off-center
+
+    // 4. Mouse Look Interaction
+    let mouseX = 0, mouseY = 0;
+    document.addEventListener('mousemove', (e) => {
+        // Calculate mouse position as a factor of screen size
+        mouseX = (e.clientX / window.innerWidth) - 0.5;
+        mouseY = (e.clientY / window.innerHeight) - 0.5;
+    });
+
+    // 5. Animation Loop
+    function animate() {
+        requestAnimationFrame(animate);
+
+        // Subtle camera sway based on mouse (Look around)
+        camera.rotation.y = -mouseX * 0.5;
+        camera.rotation.x = -mouseY * 0.3;
+
+        renderer.render(scene, camera);
+    }
+
+    animate();
+
+    // Handle Window Resize
+    window.addEventListener('resize', () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+</script>
+</body>
+</html>
